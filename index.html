@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101827" />
+    <title>API Handshake Demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand-mark">AH</div>
+        <div>
+          <p class="eyebrow">DEVELOPER DIAGNOSTICS</p>
+          <h1>API Handshake</h1>
+        </div>
+        <span class="version">DEMO · v1.0.0</span>
+      </header>
+
+      <main>
+        <section class="intro">
+          <p class="eyebrow">FRONTEND ↔ BACKEND</p>
+          <h2>Is your API connection healthy?</h2>
+          <p class="muted">Run a live handshake against the Express backend using the published <code>api-handshake</code> npm package.</p>
+          <button id="run-check" type="button">Run connection check <span aria-hidden="true">↗</span></button>
+        </section>
+
+        <section class="summary-card">
+          <div class="summary-copy">
+            <p class="eyebrow">CONNECTION STATUS</p>
+            <h3 id="connection-title">Not checked yet</h3>
+            <p id="connection-message" class="muted">Run the diagnostic to inspect your backend.</p>
+          </div>
+          <div id="connection-indicator" class="indicator idle" aria-label="Not checked"></div>
+        </section>
+
+        <section class="checks-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DIAGNOSTIC REPORT</p>
+              <h3>Handshake checks</h3>
+            </div>
+            <span id="duration" class="duration">—</span>
+          </div>
+          <div id="checks" class="checks-grid">
+            <p class="empty-state">Your diagnostic results will appear here.</p>
+          </div>
+        </section>
+
+        <section class="details-card">
+          <p class="eyebrow">HOW THIS DEMO WORKS</p>
+          <ol>
+            <li>Express exposes <code>/api/__api_handshake</code>.</li>
+            <li>The browser calls <code>createHandshakeClient()</code>.</li>
+            <li>The package checks reachability, CORS visibility, API version and credential configuration.</li>
+          </ol>
+        </section>
+      </main>
+      <footer>Built with the published <a href="https://www.npmjs.com/package/api-handshake" target="_blank" rel="noreferrer">api-handshake</a> package.</footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
